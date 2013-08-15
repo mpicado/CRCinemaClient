@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+        android:background="@drawable/main_cinema_background">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@id/cinemaNameLabel"
+            android:text="@string/cinema_name"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@id/cinemaName"
+            android:textSize="22dp"
+            android:textStyle="italic"
+            android:textColor="#ffffff"
+            android:layout_toRightOf="@id/cinemaNameLabel"
+            android:layout_alignBottom="@id/cinemaNameLabel"
+            android:layout_marginLeft="23dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@id/cinemaAdressLabel"
+            android:text="@string/cinema_address"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/cinemaNameLabel"
+            android:layout_marginLeft="15dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/cinemaAdressValue"
+            android:layout_alignBottom="@id/cinemaAdressLabel"
+            android:layout_toRightOf="@id/cinemaAdressLabel"
+            android:textSize="22dp"
+            android:textStyle="italic"
+            android:textColor="#ffffff"
+            android:layout_alignLeft="@id/cinemaName"/>
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cinemaImageButton"
+            android:background="@null"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/cinemaAdressLabel"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"/>
+
+
+</RelativeLayout>

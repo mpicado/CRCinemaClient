@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/dimens.xml -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/ids.xml -->
+    <item name="cinemaAdress" type="id"/>
+    <item name="cinemaAdressLabel" type="id"/>
+    <item name="cinemaAdressValue" type="id"/>
+    <item name="cinemaName" type="id"/>
+    <item name="cinemaNameLabel" type="id"/>
+    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/strings.xml -->
+    <string name="action_settings">Settings</string>
+    <string name="app_name">CRCinema</string>
+    <string name="cinema_address">Dirección: </string>
+    <string name="cinema_name">Nombre: </string>
+    <string name="hello_world">Hello world!</string>
+    <string name="welcome_text">Bienvenidos a la mejor cartelera de Cine para Costa Rica</string>
+    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/styles.xml -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+</resources>

@@ -1,0 +1,24 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1376590970000 473 840b790fc645d0664e1cb35dca56e7df85e70af6 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$layout.class
+1376590970000 443 8904514558f2eed63fe1504fe738d5c666545d08 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$style.class
+1376590970000 2912 b9712382eefe519a1fda7c2c4149a5526799adfe /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/adapters/CinemaAdapter.class
+1376590970000 407 f22826e0c1f079f338570bc0c4e79edc04feaaf9 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$menu.class
+1376590970000 710 cba17184c26f56e0bd95fa7c7c2724d6a34b1a91 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$id.class
+1376590970000 593 c72f2323df461a6c4571da0898ea561c2aaa85fc /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$string.class
+1376590970000 774 9246b73a32e51b0191f285bcabcce3ae7099ceb5 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$drawable.class
+1376586578000 2136 fee4f123c145b528b2705fa647afff2a03bd19bd /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/domain/Cinema.class
+1376517961000 1365 aeb075bdf029c66130fd4a44fed3d78956dadd77 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/domain/MovieGuideDetail.class
+1376590970000 717 f44348c34db14ccc875bd7bbde6abe99f8588a7b /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R.class
+1376517961000 1118 f660acd88ce7b869c32a1d3f5ea97d7b4c54eaeb /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/domain/MovieGuide.class
+1376493528000 473 dc035ad0e5cd13bf8248d879ffce6f4533d8ee91 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$dimen.class
+1376514629000 251 ba49be5ca05447b6ce2951943c9352de08fdf913 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/CinemaListActivity$1.class
+1376493528000 353 0323d0254bf01ff2b55fd1e7a13cf446e5d14a16 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/BuildConfig.class
+1369432937000 490914 3fe75433da602500cc71fcc1c46e5550291dd45d /Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/13.0.0/support-v4-13.0.0.jar
+1376517961000 2770 bbd52ed9af4188199daf66558bac57a18ddf1487 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/domain/Movie.class
+1376517961000 2557 353310aeb11a96fca4d87a697c86420dd0b1971b /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/utils/RestUtil.class
+1376588472000 3321 7ae25e2f36d07e5ef22a736f9495c0d9def0946e /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/CinemaListActivity$AsyncProcess.class
+1376517961000 1198 44652aa39996a545c3f2935ed77a0dc570fd428c /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/domain/Cinema$CinemaType.class
+1376586578000 1642 8919fe2074acc8397037061b226376bb3e47c509 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/CinemaListActivity.class
+1376493528000 352 72e69ff710110eab5292ab2c0156161abcf7d862 /Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/build/classes/debug/com/amazonaws/crcinema/R$attr.class
