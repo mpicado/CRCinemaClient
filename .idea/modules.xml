@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CRCinema/CRCinema.iml" filepath="$PROJECT_DIR$/CRCinema/CRCinema.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CRCinemaClient.iml" filepath="$PROJECT_DIR$/CRCinemaClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/CRCinemaProject.iml" filepath="$PROJECT_DIR$/CRCinemaProject.iml" />
     </modules>
   </component>

@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amazonaws.crcinema.R;
@@ -46,23 +46,17 @@ public class CinemaAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null){
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-            view = inflater.inflate(R.layout.cinema_list_detail_activity,viewGroup,false);
+            view = inflater.inflate(R.layout.cinema_list_card,viewGroup,false);
         }
         Cinema cinema = cinemaList.get(i);
         TextView nameTextView = (TextView) view.findViewById(R.id.cinemaName);
         nameTextView.setText(cinema.getName());
 
-        TextView addressTextView = (TextView) view.findViewById(R.id.cinemaAdressValue);
+        TextView addressTextView = (TextView) view.findViewById(R.id.cinemaAddress);
         addressTextView.setText(cinema.getAddress());
 
-        ImageButton cinemaImageButton = (ImageButton) view.findViewById(R.id.cinemaImageButton);
-        //TODO, need to think of a better way to do this!! this is an ugly patch!!
-        if("novacinemas_button_selector".equals(cinema.getButtonSlectorName())){
-            cinemaImageButton.setImageResource(R.drawable.novacinemas_button_selector);
-        }
-        else if("cinemark_button_selector".equals(cinema.getButtonSlectorName())){
-            cinemaImageButton.setImageResource(R.drawable.cinemark_button_selector);
-        }
+        ImageView cinemaImageView = (ImageView) view.findViewById(R.id.cinemaImage);
+        cinemaImageView.setImageResource(R.drawable.logo_cinemark);
 
         return view;
     }

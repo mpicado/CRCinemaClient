@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/boszdigital/AndroidStudioProjects/CRCinemaClient/CRCinema/src/main/res/values/dimens.xml -->
+    <dimen name="activity_divider_height">25dip</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_padding_left">10.0dip</dimen>
+    <dimen name="activity_padding_right">10.0dip</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/ids.xml -->
-    <item name="cinemaAdress" type="id"/>
-    <item name="cinemaAdressLabel" type="id"/>
-    <item name="cinemaAdressValue" type="id"/>
+    <!-- From: file:/Users/boszdigital/AndroidStudioProjects/CRCinemaClient/CRCinema/src/main/res/values/ids.xml -->
+    <item name="cinemaAddress" type="id"/>
+    <item name="cinemaAddressLabel" type="id"/>
+    <item name="cinemaAddressValue" type="id"/>
+    <item name="cinemaImage" type="id"/>
     <item name="cinemaName" type="id"/>
     <item name="cinemaNameLabel" type="id"/>
-    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/strings.xml -->
-    <string name="action_settings">Settings</string>
+    <item name="title" type="id">Title</item>
+    <!-- From: file:/Users/boszdigital/AndroidStudioProjects/CRCinemaClient/CRCinema/src/main/res/values/strings.xml -->
+    <string name="action_settings">Configuración</string>
     <string name="app_name">CRCinema</string>
-    <string name="cinema_address">Dirección: </string>
-    <string name="cinema_name">Nombre: </string>
-    <string name="hello_world">Hello world!</string>
-    <string name="welcome_text">Bienvenidos a la mejor cartelera de Cine para Costa Rica</string>
-    <!-- From: file:/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/res/values/styles.xml -->
+    <string name="welcome_text">Elija un Cine</string>
+    <!-- From: file:/Users/boszdigital/AndroidStudioProjects/CRCinemaClient/CRCinema/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in

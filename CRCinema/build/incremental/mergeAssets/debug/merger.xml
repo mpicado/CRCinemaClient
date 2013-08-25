@@ -2,10 +2,10 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/main/assets" />
+        <source path="/Users/boszdigital/AndroidStudioProjects/CRCinemaClient/CRCinema/src/main/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/mpicado/AndroidStudioProjects/CRCinemaProject/CRCinema/src/debug/assets" />
+        <source path="/Users/boszdigital/AndroidStudioProjects/CRCinemaClient/CRCinema/src/debug/assets" />
     </dataSet>
 
 </merger>

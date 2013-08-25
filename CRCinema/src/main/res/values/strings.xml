@@ -3,9 +3,7 @@
 
     <string name="app_name">CRCinema</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="welcome_text">Bienvenidos a la mejor cartelera de Cine para Costa Rica</string>
-    <string name="cinema_address">Dirección: </string>
-    <string name="cinema_name">Nombre: </string>
+    <string name="welcome_text">Elija un Cine</string>
+    <string name="cine">Cine</string>
 
 </resources>
