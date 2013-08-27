@@ -1,9 +1,11 @@
 package com.amazonaws.crcinema;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.widget.ListView;
 
@@ -21,16 +23,31 @@ import java.util.List;
 public class CinemaListActivity extends Activity {
 
     ProgressDialog dialog;
+    SharedPreferences app_preferences;
+    //server address
+    //public static String API_SERVER_ADDRESS = "http://54.213.0.100:8080/CrCinema/";
+    //LOCAL IP ADDRESS
+    public static String API_SERVER_ADDRESS = "http://192.168.0.103:8080/CRCinema-api/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cinema_list_activity);
+        setPreferences();
         loadCinemas();
+    }
+
+    private void setPreferences(){
+        app_preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = app_preferences.edit();
+        editor.putString("apiUrl", API_SERVER_ADDRESS);
+        editor.apply();
     }
 
     private void loadCinemas(){
         dialog = ProgressDialog.show(this,"Loading","Cargando Cinemas");
-        new AsyncProcess().execute("http://54.213.0.100:8080/CrCinema/cinema/listCinemas");
+        String baseApiUrl = app_preferences.getString("apiUrl", API_SERVER_ADDRESS);
+        new AsyncProcess().execute(baseApiUrl + "cinema/listCinemas");
     }
 
 
@@ -65,10 +82,10 @@ public class CinemaListActivity extends Activity {
                         JSONObject obj = jArray.getJSONObject(i);
                         //TODO, it would be better to have a json parser for each domain
                         //TODO, the selector needs to be populated in the api
-                        Cinema cinema = new Cinema(obj.getString("name"),obj.getString("address"),null);
+                        Cinema cinema = new Cinema(obj.getString("name"),obj.getString("address"),obj.getString("cinemaImageName"));
                         listCinemas.add(cinema);
                     }
-                    CinemaAdapter cinemaAdapter = new CinemaAdapter(listCinemas);
+                    CinemaAdapter cinemaAdapter = new CinemaAdapter(listCinemas,app_preferences.getString("apiUrl", API_SERVER_ADDRESS));
                     ListView cinemaListView = (ListView) findViewById(R.id.cinemaListView);
                     cinemaListView.setAdapter(cinemaAdapter);
                 } catch (JSONException e) {

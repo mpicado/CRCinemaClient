@@ -14,17 +14,11 @@ public class Cinema {
 
     }
 
-    public Cinema(String name, String address, String btnSelectorName){
+    public Cinema(String name, String address, String cinemaImageName){
         //the selector name comes from the api, so that we do not have it hardcoded
         this.setName(name);
         this.setAddress(address);
-        //TODO change this when the selector name comes from the api
-        if("Nova Cinemas".equals(this.name)){
-            this.setButtonSlectorName("novacinemas_button_selector");
-        }
-        else if(this.name.contains("Cinemark")){
-            this.setButtonSlectorName("cinemark_button_selector");
-        }
+        this.setCinemaImageName(cinemaImageName);
 
     }
 
@@ -32,7 +26,7 @@ public class Cinema {
     private String name;
     private String address;
     private MovieGuide movieGuide;
-    private String buttonSlectorName;
+    private String cinemaImageName;
 
     public int getId() {
         return id;
@@ -66,11 +60,13 @@ public class Cinema {
         this.movieGuide = movieGuide;
     }
 
-    public String getButtonSlectorName() {
-        return buttonSlectorName;
+    public String getCinemaImageName() {
+        return cinemaImageName;
     }
 
-    public void setButtonSlectorName(String buttonSlectorName) {
-        this.buttonSlectorName = buttonSlectorName;
+    public void setCinemaImageName(String cinemaImageName) {
+        this.cinemaImageName = cinemaImageName;
     }
+
+
 }

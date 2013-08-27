@@ -1,14 +1,19 @@
 package com.amazonaws.crcinema.adapters;
 
+import android.app.Activity;
+import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amazonaws.crcinema.R;
 import com.amazonaws.crcinema.domain.Cinema;
+import com.amazonaws.crcinema.utils.CRCinemaUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +23,15 @@ import java.util.List;
  */
 public class CinemaAdapter extends BaseAdapter {
     private List<Cinema> cinemaList = new ArrayList<Cinema>();
+    String apiUrl = "";
 
     public CinemaAdapter(){
 
     }
 
-    public CinemaAdapter(List<Cinema> list){
+    public CinemaAdapter(List<Cinema> list, String apiUrl){
         this.cinemaList = list;
+        this.apiUrl = apiUrl;
     }
 
     @Override
@@ -56,7 +63,22 @@ public class CinemaAdapter extends BaseAdapter {
         addressTextView.setText(cinema.getAddress());
 
         ImageView cinemaImageView = (ImageView) view.findViewById(R.id.cinemaImage);
-        cinemaImageView.setImageResource(R.drawable.logo_cinemark);
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity)view.getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        switch(metrics.densityDpi){
+            case DisplayMetrics.DENSITY_MEDIUM:
+                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-mdpi/" + cinema.getCinemaImageName()));
+                break;
+            case DisplayMetrics.DENSITY_HIGH:
+                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-hdpi/" + cinema.getCinemaImageName()));
+                break;
+            case DisplayMetrics.DENSITY_XHIGH:
+                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-xhdpi/" + cinema.getCinemaImageName()));
+                break;
+            case DisplayMetrics.DENSITY_XXHIGH:
+                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-xxhdpi/" + cinema.getCinemaImageName()));
+                break;
+        }
 
         return view;
     }
