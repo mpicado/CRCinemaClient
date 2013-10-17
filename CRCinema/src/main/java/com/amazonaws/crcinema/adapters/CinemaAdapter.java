@@ -23,7 +23,9 @@ import java.util.List;
  */
 public class CinemaAdapter extends BaseAdapter {
     private List<Cinema> cinemaList = new ArrayList<Cinema>();
-    String apiUrl = "";
+
+    //localhost server
+    String apiUrl = "http://172.16.19.17:8080/CRCinema-api/";
 
     public CinemaAdapter(){
 
@@ -65,20 +67,26 @@ public class CinemaAdapter extends BaseAdapter {
         ImageView cinemaImageView = (ImageView) view.findViewById(R.id.cinemaImage);
         DisplayMetrics metrics = new DisplayMetrics();
         ((Activity)view.getContext()).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        String URL = "";
         switch(metrics.densityDpi){
             case DisplayMetrics.DENSITY_MEDIUM:
-                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-mdpi/" + cinema.getCinemaImageName()));
+                URL = this.apiUrl + "/images/drawable-mdpi/" + cinema.getCinemaImageName();
                 break;
             case DisplayMetrics.DENSITY_HIGH:
-                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-hdpi/" + cinema.getCinemaImageName()));
+                URL = this.apiUrl + "/images/drawable-hdpi/" + cinema.getCinemaImageName();
                 break;
             case DisplayMetrics.DENSITY_XHIGH:
-                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-xhdpi/" + cinema.getCinemaImageName()));
+                URL = this.apiUrl + "/images/drawable-xhdpi/" + cinema.getCinemaImageName();
                 break;
             case DisplayMetrics.DENSITY_XXHIGH:
-                cinemaImageView.setImageDrawable(CRCinemaUtil.getDrawableFromUrl(this.apiUrl + "static/images/drawable-xxhdpi/" + cinema.getCinemaImageName()));
+                URL = this.apiUrl + "/images/drawable-xxhdpi/" + cinema.getCinemaImageName();
                 break;
         }
+
+        cinemaImageView.setTag(URL);
+        //CRCinemaUtil crCinemaUtil = new CRCinemaUtil();
+        CRCinemaUtil.getDrawableFromUrl(cinemaImageView);
 
         return view;
     }

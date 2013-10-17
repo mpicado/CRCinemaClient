@@ -27,7 +27,7 @@ public class CinemaListActivity extends Activity {
     //server address
     //public static String API_SERVER_ADDRESS = "http://54.213.0.100:8080/CrCinema/";
     //LOCAL IP ADDRESS
-    public static String API_SERVER_ADDRESS = "http://192.168.0.103:8080/CRCinema-api/";
+    public static String API_SERVER_ADDRESS = "http://172.16.19.17:8080/CRCinema-api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
