@@ -27,7 +27,7 @@ public class CinemaListActivity extends Activity {
     //server address
     //public static String API_SERVER_ADDRESS = "http://54.213.0.100:8080/CrCinema/";
     //LOCAL IP ADDRESS
-    public static String API_SERVER_ADDRESS = "http://172.16.19.17:8080/CRCinema-api/";
+    public static String API_SERVER_ADDRESS = "http://192.168.1.6:8080/CRCinema-api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +89,7 @@ public class CinemaListActivity extends Activity {
                     ListView cinemaListView = (ListView) findViewById(R.id.cinemaListView);
                     cinemaListView.setAdapter(cinemaAdapter);
                 } catch (JSONException e) {
-                    //add some logic here to tell the user that the cinemas couldnt be retrieved
+                    //add some logic here to tell the user that the cinemas couldn't be retrieved
                     e.printStackTrace();
                 }
             }
