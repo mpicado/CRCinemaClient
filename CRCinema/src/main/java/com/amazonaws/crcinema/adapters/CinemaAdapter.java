@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.amazonaws.crcinema.R;
 import com.amazonaws.crcinema.domain.Cinema;
 import com.amazonaws.crcinema.utils.CRCinemaUtil;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,8 +86,7 @@ public class CinemaAdapter extends BaseAdapter {
         }
 
         cinemaImageView.setTag(URL);
-        //CRCinemaUtil crCinemaUtil = new CRCinemaUtil();
-        CRCinemaUtil.getDrawableFromUrl(cinemaImageView);
+        Picasso.with(cinemaImageView.getContext()).load(URL).into(cinemaImageView);
 
         return view;
     }
