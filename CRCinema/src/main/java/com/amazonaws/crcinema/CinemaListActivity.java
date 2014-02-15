@@ -85,9 +85,11 @@ public class CinemaListActivity extends Activity {
                         Cinema cinema = new Cinema(obj.getString("name"),obj.getString("address"),obj.getString("cinemaImageName"));
                         listCinemas.add(cinema);
                     }
+
                     CinemaAdapter cinemaAdapter = new CinemaAdapter(listCinemas,app_preferences.getString("apiUrl", API_SERVER_ADDRESS));
                     ListView cinemaListView = (ListView) findViewById(R.id.cinemaListView);
                     cinemaListView.setAdapter(cinemaAdapter);
+
                 } catch (JSONException e) {
                     //add some logic here to tell the user that the cinemas couldn't be retrieved
                     e.printStackTrace();

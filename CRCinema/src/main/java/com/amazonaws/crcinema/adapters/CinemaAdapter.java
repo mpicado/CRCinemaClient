@@ -24,9 +24,7 @@ import java.util.List;
  */
 public class CinemaAdapter extends BaseAdapter {
     private List<Cinema> cinemaList = new ArrayList<Cinema>();
-
-    //localhost server
-    String apiUrl = "http://172.16.19.17:8080/CRCinema-api/";
+    String apiUrl;
 
     public CinemaAdapter(){
 
