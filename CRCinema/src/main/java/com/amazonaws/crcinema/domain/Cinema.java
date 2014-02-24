@@ -7,18 +7,22 @@ public class Cinema {
 
     public enum CinemaType {
         NOVA_CINEMAS,
-        CINEMARK
+        CINEMARK,
+        CINEMARK_ESTE,
+        CCM_PASEO,
+        CCM_LINCOLN
     }
 
     public Cinema(){
 
     }
 
-    public Cinema(String name, String address, String cinemaImageName){
+    public Cinema(String name, String address, String cinemaImageName, String cinemaType){
         //the selector name comes from the api, so that we do not have it hardcoded
         this.setName(name);
         this.setAddress(address);
         this.setCinemaImageName(cinemaImageName);
+        this.setCinemaType(cinemaType);
 
     }
 
@@ -27,6 +31,7 @@ public class Cinema {
     private String address;
     private MovieGuide movieGuide;
     private String cinemaImageName;
+    private String cinemaType;
 
     public int getId() {
         return id;
@@ -68,5 +73,11 @@ public class Cinema {
         this.cinemaImageName = cinemaImageName;
     }
 
+    public String getCinemaType() {
+        return cinemaType;
+    }
 
+    public void setCinemaType(String cinemaType) {
+        this.cinemaType = cinemaType;
+    }
 }

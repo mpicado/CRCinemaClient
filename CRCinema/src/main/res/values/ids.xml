@@ -7,4 +7,7 @@
     <item name="cinemaAddressValue" type="id"/>
     <item name="cinemaImage" type="id"/>
     <item name="title" type="id">Title</item>
+    <item name="movieName" type="id"/>
+    <item name="movieDescription" type="id"/>
+    <item name="movieImage" type="id"/>
 </resources>

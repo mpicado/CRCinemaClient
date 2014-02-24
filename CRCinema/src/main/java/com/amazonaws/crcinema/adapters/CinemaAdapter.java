@@ -3,6 +3,7 @@ package com.amazonaws.crcinema.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,9 @@ public class CinemaAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.cinema_list_card,viewGroup,false);
         }
         Cinema cinema = cinemaList.get(i);
+
+        view.setTag(cinema.getCinemaType());
+
         TextView nameTextView = (TextView) view.findViewById(R.id.cinemaName);
         nameTextView.setText(cinema.getName());
 

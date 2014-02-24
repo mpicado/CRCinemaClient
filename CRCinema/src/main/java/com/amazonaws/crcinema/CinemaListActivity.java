@@ -1,13 +1,18 @@
 package com.amazonaws.crcinema;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.amazonaws.crcinema.adapters.CinemaAdapter;
 import com.amazonaws.crcinema.domain.Cinema;
@@ -24,10 +29,9 @@ public class CinemaListActivity extends Activity {
 
     ProgressDialog dialog;
     SharedPreferences app_preferences;
-    //server address
-    //public static String API_SERVER_ADDRESS = "http://54.213.0.100:8080/CrCinema/";
+
     //LOCAL IP ADDRESS
-    public static String API_SERVER_ADDRESS = "http://192.168.1.6:8080/CRCinema-api/";
+    public static String API_SERVER_ADDRESS = "http://192.168.1.3:8080/CRCinema-api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +86,7 @@ public class CinemaListActivity extends Activity {
                         JSONObject obj = jArray.getJSONObject(i);
                         //TODO, it would be better to have a json parser for each domain
                         //TODO, the selector needs to be populated in the api
-                        Cinema cinema = new Cinema(obj.getString("name"),obj.getString("address"),obj.getString("cinemaImageName"));
+                        Cinema cinema = new Cinema(obj.getString("name"),obj.getString("address"),obj.getString("cinemaImageName"),obj.getString("cinemaType"));
                         listCinemas.add(cinema);
                     }
 
@@ -90,8 +94,17 @@ public class CinemaListActivity extends Activity {
                     ListView cinemaListView = (ListView) findViewById(R.id.cinemaListView);
                     cinemaListView.setAdapter(cinemaAdapter);
 
+                    cinemaListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                            Intent i= new Intent(CinemaListActivity.this,MovieListActivity.class);
+                            i.putExtra("cinemaType",(String)view.getTag());
+                            startActivity(i);
+                        }
+                    });
+
                 } catch (JSONException e) {
-                    //add some logic here to tell the user that the cinemas couldn't be retrieved
+                    //TODO add some logic here to tell the user that the cinemas couldn't be retrieved
                     e.printStackTrace();
                 }
             }
