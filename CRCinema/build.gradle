@@ -16,6 +16,7 @@ dependencies {
     compile 'com.android.support:support-v4:13.0.+'
     compile 'com.squareup.picasso:picasso:2.2.0'
     compile 'com.android.support:appcompat-v7:+'
+    compile 'com.google.code.gson:gson:2.2.+'
 }
 
 android {

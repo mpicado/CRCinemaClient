@@ -13,25 +13,13 @@ public class Cinema {
         CCM_LINCOLN
     }
 
-    public Cinema(){
-
-    }
-
-    public Cinema(String name, String address, String cinemaImageName, String cinemaType){
-        //the selector name comes from the api, so that we do not have it hardcoded
-        this.setName(name);
-        this.setAddress(address);
-        this.setCinemaImageName(cinemaImageName);
-        this.setCinemaType(cinemaType);
-
-    }
-
     private int id;
     private String name;
     private String address;
-    private MovieGuide movieGuide;
     private String cinemaImageName;
     private String cinemaType;
+
+    MovieGuide movieGuide;
 
     public int getId() {
         return id;
@@ -57,14 +45,6 @@ public class Cinema {
         this.address = address;
     }
 
-    public MovieGuide getMovieGuide() {
-        return movieGuide;
-    }
-
-    public void setMovieGuide(MovieGuide movieGuide) {
-        this.movieGuide = movieGuide;
-    }
-
     public String getCinemaImageName() {
         return cinemaImageName;
     }
@@ -79,5 +59,13 @@ public class Cinema {
 
     public void setCinemaType(String cinemaType) {
         this.cinemaType = cinemaType;
+    }
+
+    public MovieGuide getMovieGuide() {
+        return movieGuide;
+    }
+
+    public void setMovieGuide(MovieGuide movieGuide) {
+        this.movieGuide = movieGuide;
     }
 }

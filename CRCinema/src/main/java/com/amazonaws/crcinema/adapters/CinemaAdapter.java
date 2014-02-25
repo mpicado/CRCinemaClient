@@ -1,20 +1,16 @@
 package com.amazonaws.crcinema.adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amazonaws.crcinema.R;
 import com.amazonaws.crcinema.domain.Cinema;
-import com.amazonaws.crcinema.utils.CRCinemaUtil;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -26,10 +22,6 @@ import java.util.List;
 public class CinemaAdapter extends BaseAdapter {
     private List<Cinema> cinemaList = new ArrayList<Cinema>();
     String apiUrl;
-
-    public CinemaAdapter(){
-
-    }
 
     public CinemaAdapter(List<Cinema> list, String apiUrl){
         this.cinemaList = list;

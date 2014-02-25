@@ -18,12 +18,6 @@ public class Movie {
     private String thumbnailUrl;
     private String trailerUrl;
 
-    public Movie(String name, String description, String thumbnailUrl){
-        this.name = name;
-        this.description = description;
-        this.thumbnailUrl = thumbnailUrl;
-    }
-
     public int getId() {
         return id;
     }

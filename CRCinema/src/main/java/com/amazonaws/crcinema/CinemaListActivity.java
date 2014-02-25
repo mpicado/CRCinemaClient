@@ -1,28 +1,24 @@
 package com.amazonaws.crcinema;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.amazonaws.crcinema.adapters.CinemaAdapter;
 import com.amazonaws.crcinema.domain.Cinema;
 import com.amazonaws.crcinema.utils.RestUtil;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class CinemaListActivity extends Activity {
@@ -79,16 +75,10 @@ public class CinemaListActivity extends Activity {
             super.onPostExecute(result);
             if(result != null){
                 try {
-                    List<Cinema> listCinemas = new ArrayList<Cinema>();
-                    JSONArray jArray = new JSONArray(result);
+                    List<Cinema> listCinemas;
 
-                    for(int i = 0; i < jArray.length(); i++){
-                        JSONObject obj = jArray.getJSONObject(i);
-                        //TODO, it would be better to have a json parser for each domain
-                        //TODO, the selector needs to be populated in the api
-                        Cinema cinema = new Cinema(obj.getString("name"),obj.getString("address"),obj.getString("cinemaImageName"),obj.getString("cinemaType"));
-                        listCinemas.add(cinema);
-                    }
+                    Gson gson = new GsonBuilder().create();
+                    listCinemas = gson.fromJson(result, new TypeToken<List<Cinema>>(){}.getType());
 
                     CinemaAdapter cinemaAdapter = new CinemaAdapter(listCinemas,app_preferences.getString("apiUrl", API_SERVER_ADDRESS));
                     ListView cinemaListView = (ListView) findViewById(R.id.cinemaListView);
@@ -103,7 +93,7 @@ public class CinemaListActivity extends Activity {
                         }
                     });
 
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     //TODO add some logic here to tell the user that the cinemas couldn't be retrieved
                     e.printStackTrace();
                 }

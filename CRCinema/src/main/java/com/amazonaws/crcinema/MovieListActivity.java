@@ -4,29 +4,15 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.amazonaws.crcinema.adapters.CinemaAdapter;
 import com.amazonaws.crcinema.adapters.MovieAdapter;
 import com.amazonaws.crcinema.domain.Cinema;
-import com.amazonaws.crcinema.domain.Movie;
 import com.amazonaws.crcinema.utils.RestUtil;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class MovieListActivity extends Activity {
 
@@ -78,26 +64,14 @@ public class MovieListActivity extends Activity {
             super.onPostExecute(result);
             if(result != null){
                 try {
-                    List<Movie> listMovies = new ArrayList<Movie>();
-                    JSONObject jsonObject = new JSONObject(result);
-                    //TODO change this disgusting call
-                    JSONArray jArray = (JSONArray)((JSONObject)jsonObject.get("movieGuide")).get("movieDetails");
+                    Gson gson = new GsonBuilder().create();
+                    Cinema cinema = gson.fromJson(result, Cinema.class);
 
-                    for(int i = 0; i < jArray.length(); i++){
-                        JSONObject obj = (JSONObject)jArray.getJSONObject(i).get("movie");
-                        //TODO, it would be better to have a json parser for each domain
-                        //TODO, the selector needs to be populated in the api
-                        Movie movie = new Movie(obj.getString("name"),
-                                obj.getString("description"),
-                                obj.getString("thumbnailUrl"));
-                        listMovies.add(movie);
-                    }
-
-                    MovieAdapter cinemaAdapter = new MovieAdapter(listMovies);
+                    MovieAdapter cinemaAdapter = new MovieAdapter(cinema.getMovieGuide());
                     ListView movieListView = (ListView) findViewById(R.id.movieListView);
                     movieListView.setAdapter(cinemaAdapter);
 
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     //TODO add some logic here to tell the user that the cinemas couldn't be retrieved
                     e.printStackTrace();
                 }

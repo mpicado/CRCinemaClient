@@ -9,30 +9,28 @@ import android.widget.TextView;
 
 import com.amazonaws.crcinema.R;
 import com.amazonaws.crcinema.domain.Movie;
+import com.amazonaws.crcinema.domain.MovieGuide;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by oarriet on 2/23/14.
  */
 public class MovieAdapter extends BaseAdapter {
 
-    private List<Movie> movieList = new ArrayList<Movie>();
+    private MovieGuide movieGuide = new MovieGuide();
 
-    public MovieAdapter(List<Movie> movieList){
-        this.movieList = movieList;
+    public MovieAdapter(MovieGuide movieGuide){
+        this.movieGuide = movieGuide;
     }
 
     @Override
     public int getCount() {
-        return movieList.size();
+        return movieGuide.getMovieDetails().size();
     }
 
     @Override
     public Object getItem(int i) {
-        return movieList.get(i);
+        return movieGuide.getMovieDetails().get(i);
     }
 
     @Override
@@ -46,7 +44,7 @@ public class MovieAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
             view = inflater.inflate(R.layout.movie_list_card,viewGroup,false);
         }
-        Movie movie = movieList.get(i);
+        Movie movie = movieGuide.getMovieDetails().get(i).getMovie();
 
         TextView nameTextView = (TextView) view.findViewById(R.id.movieName);
         nameTextView.setText(movie.getName());
